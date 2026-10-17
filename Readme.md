@@ -40,7 +40,7 @@ The lab consists of two virtual machines running on a **NAT-segmented virtual ne
 
 > **Fig. 1** — VMware Workstation Pro library showing the lab topology: DC-01 (Domain Controller), WS-01 (Client), and an auxiliary Ubuntu VM.
 
-![VMware Lab Topology — DC-01, WS-01, and Ubuntu VMs in the VMware Workstation Pro library panel](screenshots/01-vmware-lab-topology.png)
+![VMware Lab Topology — DC-01, WS-01, and Ubuntu VMs in the VMware Workstation Pro library panel](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/01-vmware-lab-topology.png?raw=true)
 
 </div>
 
@@ -76,7 +76,7 @@ corp.local (Domain Root)
 
 > **Fig. 2** — Active Directory Users and Computers (ADUC) on DC-01 displaying the `Corp_Company` OU with child OUs: `Corp_Workstations`, `Finance_Dept`, `HR_Dept`, and `IT_Dept`.
 
-![ADUC console on DC-01 showing the Corp_Company OU tree with departmental child OUs — Corp_Workstations, Finance_Dept, HR_Dept, IT_Dept](screenshots/02-aduc-ou-hierarchy.png)
+![ADUC console on DC-01 showing the Corp_Company OU tree with departmental child OUs — Corp_Workstations, Finance_Dept, HR_Dept, IT_Dept](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/02-aduc-ou-hierarchy.png?raw=true)
 
 </div>
 
@@ -86,7 +86,7 @@ corp.local (Domain Root)
 
 > **Fig. 3** — ADUC drilled into `HR_Dept` OU, showing the provisioned user account `Rahul Sharma` and the departmental security group `SG_HR_Users`.
 
-![ADUC showing HR_Dept OU contents — user object Rahul Sharma and security group SG_HR_Users](screenshots/03-aduc-hr-dept-users.png)
+![ADUC showing HR_Dept OU contents — user object Rahul Sharma and security group SG_HR_Users](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/03-aduc-hr-dept-users.png?raw=true)
 
 </div>
 
@@ -131,7 +131,7 @@ Three Group Policy configurations enforce enterprise security baselines across t
 
 > **Fig. 4** — Group Policy Management Console (GPMC) on DC-01 showing `Corp_Company` OU with two linked GPOs: `Group_screen_Lockout` (Link Order 1) and `GPO_Block_USB` (Link Order 2), both enabled.
 
-![GPMC on DC-01 displaying Corp_Company OU with linked GPOs — Group_screen_Lockout and GPO_Block_USB, both enabled](screenshots/04-gpmc-linked-policies.png)
+![GPMC on DC-01 displaying Corp_Company OU with linked GPOs — Group_screen_Lockout and GPO_Block_USB, both enabled](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/04-gpmc-linked-policies.png?raw=true)
 
 </div>
 
@@ -173,7 +173,7 @@ Three Group Policy configurations enforce enterprise security baselines across t
 
 > **Fig. 5** — `gpresult /r` output on WS-01 under `CORP\rsharma`, confirming the workstation is a domain member, policies were applied from `DC-01.corp.local`, and displaying the RSOP logging data.
 
-![Command Prompt on WS-01 showing gpresult /r output — RSOP data for CORP\rsharma, Member Workstation, Group Policy applied from DC-01.corp.local](screenshots/05-gpresult-policy-verification.png)
+![Command Prompt on WS-01 showing gpresult /r output — RSOP data for CORP\rsharma, Member Workstation, Group Policy applied from DC-01.corp.local](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/05-gpresult-policy-verification.png?raw=true)
 
 </div>
 
@@ -191,7 +191,7 @@ Three Group Policy configurations enforce enterprise security baselines across t
 
 > **Fig. 6** — Windows logon screen on WS-01 after multiple failed password attempts for `Rahul Sharma`, showing the "Invalid credentials, delaying next attempt…" delay message enforced by the lockout policy.
 
-![Windows 11 login screen showing Invalid credentials delaying next attempt message for user Rahul Sharma](screenshots/06-account-lockout-invalid-credentials.png)
+![Windows 11 login screen showing Invalid credentials delaying next attempt message for user Rahul Sharma](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/06-account-lockout-invalid-credentials.png?raw=true)
 
 </div>
 
@@ -201,7 +201,7 @@ Three Group Policy configurations enforce enterprise security baselines across t
 
 > **Fig. 7** — Account lockout confirmation on WS-01 — "The referenced account is currently locked out and may not be logged on to." This confirms the Account Lockout Threshold (5 attempts / 30 minutes) is actively enforced.
 
-![Windows 11 login screen showing account locked out message for user Rahul Sharma](screenshots/07-account-lockout-confirmation.png)
+![Windows 11 login screen showing account locked out message for user Rahul Sharma](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/screenshots/07-account-lockout-confirmation.png?raw=true)
 
 </div>
 
@@ -217,7 +217,7 @@ Three Group Policy configurations enforce enterprise security baselines across t
 
 ## ⚙️ PowerShell Automation — Bulk User Provisioning
 
-The [`Bulk-User-Creation.ps1`](Bulk-User-Creation.ps1) script automates the provisioning of departmental user accounts across the `Corp_Company` OU structure. Key features:
+The [`Bulk-User-Creation.ps1`](https://github.com/Shiva-Sharan/Enterprise-Active-Directory-Enpoint-Policy/blob/main/Bulk-User-Creation.ps1) script automates the provisioning of departmental user accounts across the `Corp_Company` OU structure. Key features:
 
 - ✅ Imports the `ActiveDirectory` module with error handling
 - ✅ Validates that the root OU and each departmental OU exist before provisioning
